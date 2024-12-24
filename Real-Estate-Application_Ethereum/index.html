@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+	<script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://g-prajwal-kumar.github.io/Real-Estate-Application_Ethereum/home.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sofia+Sans&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&family=Teko:wght@300&display=swap"
+		rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Palanquin:wght@300&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
+		integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+	<script src="https://unpkg.com/vue@2/dist/vue.js"></script>
+	<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<!-- import CSS -->
+	<!-- import JavaScript -->
+
+	<title>Hello World</title>
+</head>
+
+<body>
+	<div id='loading'>
+		<h2>Loading.....</h2>
+	</div>
+	<div id='viewLoad'>
+		<h2>Loading.....</h2>
+	</div>
+	<div id='view'>
+		<div style='width: 90%; height: 90%; background: white; border-radius: 20px; margin: 0 auto; margin-top: 2.5%;'>
+			<div style='width: 100%; height: 10%; margin: 0 auto; border-bottom: 2px solid black'>
+				<h1 style='float: left; margin-left: 1em;' class="viewMoreData">Property Name</h1>
+				<i class="fa fa-times" aria-hidden="true"
+					style='float: right; margin-right: 1em; margin-top: 0.7em; font-size: 30px; font-color: black;'
+					onclick="viewExit()"></i>
+			</div>
+			<div style="width: 30%; height: 90%; float: left; border-right: 2px solid black;">
+				<img src="https://ipfs.io/ipfs/Qmd1DrNdri79GfyrRvReMyjTehf9fZjmwrwUTJdzm8awRb/0.jpg"
+					style="margin: 0 auto; display: block; border-radius: 10px; border: 2px solid black; position: absolute; top: 50%; left: 17%; -ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%); margin: 0em 2em; max-width: 400px;"
+					class="viewMoreData">
+			</div>
+			<div style="width: 68%; height: 88%; float: left; margin-left: 1%; margin-top: 1%;">
+				<div
+					style="position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%);transform: translate(-40%, -45%);">
+					<h2 style="margin-right: 0.5em;" class="viewMoreData">Current Owner : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreData">Acquired State : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreData">Description : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreData">Address : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreData">Latitude : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreData">Longitude : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreData">North Point : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreData">East Point : </h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='viewSale'>
+		<div style='width: 90%; height: 90%; background: white; border-radius: 20px; margin: 0 auto; margin-top: 2.5%;'>
+			<div style='width: 100%; height: 10%; margin: 0 auto; border-bottom: 2px solid black'>
+				<h1 style='float: left; margin-left: 1em;' class="viewMoreSaleData">Property Name</h1>
+				<i class="fa fa-times" aria-hidden="true"
+					style='float: right; margin-right: 1em; margin-top: 0.7em; font-size: 30px; font-color: black;'
+					onclick="viewExitSale()"></i>
+			</div>
+			<div style="width: 30%; height: 90%; float: left; border-right: 2px solid black;">
+				<img src="https://ipfs.io/ipfs/Qmd1DrNdri79GfyrRvReMyjTehf9fZjmwrwUTJdzm8awRb/0.jpg"
+					style="margin: 0 auto; display: block; border-radius: 10px; border: 2px solid black; position: absolute; top: 50%; left: 17%; -ms-transform: translate(-50%, -50%);transform: translate(-50%, -50%); margin: 0em 2em; max-width: 400px;"
+					class="viewMoreSaleData">
+			</div>
+			<div style="width: 68%; height: 88%; float: left; margin-left: 1%; margin-top: 1%;">
+				<div
+					style="position: absolute; top: 50%; left: 50%; -ms-transform: translate(-50%, -50%);transform: translate(-40%, -45%);">
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">Auction Owner : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">Highest Bidder : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">Highest Bid : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">Step Value : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">Description : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">Address : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">Latitude : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">Longitude : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">North Point : </h2>
+					<h2 style="margin-right: 0.5em;" class="viewMoreSaleData">East Point : </h2>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='homeView'>
+
+	</div>
+	<div id="mainDiv" style="overflow: auto">
+
+		<template>
+			<el-button style="width: 0px; height: 0px; position: absolute; border: none;  background: none"
+				v-loading.fullscreen.lock="fullscreenLoading">
+			</el-button>
+		</template>
+		<template>
+			<el-backtop target="#mainDiv">
+				<div
+					style="height: 100%; width: 100%; background-color: black; box-shadow: 0 0 6px black; border-radius: 0.5em; text-align: center; line-height: 40px; color: white;">
+					UP</div>
+			</el-backtop>
+		</template>
+		<div id="mainBar">
+			<h1 style="margin: 0px; float: left; margin-top: 0.3em; margin-left: 0.5em; font-size: 40px; cursor: pointer; font-family: 'Sofia Sans', sans-serif"
+				onclick="view(1)">Venture World</h1>
+			<h2 id="userAddress" onclick="view(4)">Not Connected</h2>
+			<button id="web3" onclick="login()">Connect to Web3</button>
+			<button class="btns" onclick="view(2)">Auctions</button>
+			<button class="btns" onclick="view(3)">Listings</button>
+			<h1 style="clear: both; text-align: center; font-family: 'Sofia Sans', sans-serif; position: relative; top: -1.3em; width: 8em; margin: 0 auto"
+				id="heading"></h1>
+		</div>
+
+		<h1 style="text-align: center; font-size: 42px; font-family: var(--headingFont); font-weight: 500; letter-spacing: 0.02em; margin: 0.2em; margin-top: 0em; padding-top: 0.2em;"
+			class="hds">Properties</h1>
+		<div id="nftFull">
+			<div id="nfts" style="overflow: hidden;">
+
+			</div>
+			<span class="material-symbols-outlined" id="temp1" onclick="slideLeft()">navigate_before</span>
+			<span class="material-symbols-outlined" id="temp2"
+				style="float: right; margin: 0; margin-top: -10em; margin-right: 5em;"
+				onclick="slideRight()">navigate_next</span>
+		</div>
+		<h1 style="text-align: center; font-size: 42px; font-family: var(--headingFont); font-weight: 500; letter-spacing: 0.02em; padding-top: 0.2em; border-top: 3px dashed black; clear: both; margin: 0.2em 2em;"
+			class="hds">Description</h1>
+		<div id="mainDescription">
+			<center>
+				<h1>What is Lorem Ipsum?</h1>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+					industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+					and scrambled it to make a type specimen book. It has survived not only five centuries, but also the
+					leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s
+					with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop
+					publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				<h1>Why do we use it?</h1>
+				<p>It is a long established fact that a reader will be distracted by the readable content of a page when
+					looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
+					distribution of letters, as opposed to using 'Content here, content here', making it look like
+					readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+					default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
+					infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose
+					(injected humour and the like).</p>
+				<h1>Where does it come from?</h1>
+				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+					classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin
+					professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words,
+					consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical
+					literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33
+					of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This
+					book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of
+					Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+					The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.
+					Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in
+					their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+				</p>
+				<h1>Where can I get some?</h1>
+				<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered
+					alteration in some form, by injected humour, or randomised words which don't look even slightly
+					believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't
+					anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet
+					tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.
+					It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures,
+					to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free
+					from repetition, injected humour, or non-characteristic words etc.</p>
+			</center>
+		</div>
+		<!-- <div id="filter"> -->
+		<button id="approveContract" onclick="approveContract()" style="margin: 0.6em auto">Approve Contract</button>
+		<!-- </div> -->
+		<div id="allAuctions">
+			<div id="auctionView">
+				<div id="auctionViewIn">
+					<h4>Details</h4>
+					<svg xmlns='http:/\/www.w3.org\/2000\/svg' width='2.5em' height='2.5em' fill='currentColor'
+						class='bi bi-x' viewBox='0 0 16 16'
+						style='position: absolute; margin-top: -4.9em; margin-left: 80.8em; color: black;'
+						onclick='auctionViewClose()'>
+						<path
+							d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z' />
+					</svg>
+					<div id="AuctionTempX">
+						<div
+							style="width: 100%; height: auto; margin-top: 0.5em; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+							<center><img src="" style="max-width: 95%; object-fit: contain;"></center>
+							<h4
+								style="text-align: center; font-size: 30px; font-family: var(--nftNameFont); font-weight: bolder">
+							</h4>
+						</div>
+					</div>
+					<div id="AuctionTempY">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="allListings">
+			<div id="listingView">
+				<div id="listingViewIn">
+					<h4>Details</h4>
+					<svg xmlns='http:/\/www.w3.org\/2000\/svg' width='2.5em' height='2.5em' fill='currentColor'
+						class='bi bi-x' viewBox='0 0 16 16'
+						style='position: absolute; margin-top: -4.9em; margin-left: 80.8em; color: black;'
+						onclick='listingViewClose()'>
+						<path
+							d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z' />
+					</svg>
+					<div id="ListingTempX">
+						<div
+							style="width: 100%; height: auto; margin-top: 0.5em; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+							<center><img src="" style="max-width: 95%; object-fit: contain;"></center>
+							<h4
+								style="text-align: center; font-size: 30px; font-family: var(--nftNameFont); font-weight: bolder">
+							</h4>
+						</div>
+					</div>
+					<div id="ListingTempY">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="profile" style="background-color: unset;">
+			<div id="myProps">
+				<div id="myView">
+					<div id="myViewIn">
+						<h5>Details</h5>
+						<svg xmlns='http:/\/www.w3.org\/2000\/svg' width='2.5em' height='2.5em' fill='currentColor'
+							class='bi bi-x' viewBox='0 0 16 16'
+							style='position: absolute; margin-top: -4.9em; margin-left: 80.8em; color: black;'
+							onclick='myViewClose()'>
+							<path
+								d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z' />
+						</svg>
+						<div id="MyTempX">
+							<div
+								style="width: 100%; height: auto; margin-top: 0.5em; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+								<center><img src="" style="max-width: 95%; object-fit: contain;"></center>
+								<h4
+									style="text-align: center; font-size: 30px; font-family: var(--nftNameFont); font-weight: bolder">
+								</h4>
+							</div>
+						</div>
+						<div id="MyTempY">
+
+						</div>
+					</div>
+				</div>
+				<h1
+					style="font-family: 'Sofia Sans', sans-serif; margin: 0.5em auto; width: 80%; text-align: center; position: relative;">
+					My Properties</h1>
+				<span class="material-symbols-outlined"
+					style="color: black; opacity: 1; background: none; box-shadow: none; padding: 0; font-size: 2.5em; margin: 0; float: right; margin-right: 0.7em; margin-top: -1.5em; cursor: pointer;"
+					onclick="goProf()">keyboard_double_arrow_right</span>
+				<div id="myNFTs">
+
+				</div>
+			</div>
+			<div style="min-width: 100%; height: 51em; background-color: unset; transition: 0.5s ease;">
+				<div
+					style="width: 10%; height: auto; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%); display: flex; flex-direction: column;">
+					<button onclick="viewProf(1)">View My Properties</button>
+					<button type="text" @click='donate()'>Donate Property</button>
+					<button type="text" @click='createAuction()'>Create Auction</button>
+					<button type="text" @click='createListing()'>Create Listing</button>
+					<button onclick="viewProf(2)">View My Auctions</button>
+					<button onclick="viewProf(3)">View My Listings</button>
+				</div>
+			</div>
+			<div id="myAuctions">
+				<div id="myaucView">
+					<div id="myaucViewIn">
+						<h5>Details</h5>
+						<svg xmlns='http:/\/www.w3.org\/2000\/svg' width='2.5em' height='2.5em' fill='currentColor'
+							class='bi bi-x' viewBox='0 0 16 16'
+							style='position: absolute; margin-top: -4.9em; margin-left: 80.8em; color: black;'
+							onclick='myaucViewClose()'>
+							<path
+								d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z' />
+						</svg>
+						<div id="MyaucTempX">
+							<div
+								style="width: 100%; height: auto; margin-top: 0.5em; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+								<center><img src="" style="max-width: 95%; object-fit: contain;"></center>
+								<h4
+									style="text-align: center; font-size: 30px; font-family: var(--nftNameFont); font-weight: bolder">
+								</h4>
+							</div>
+						</div>
+						<div id="MyaucTempY">
+
+						</div>
+					</div>
+				</div>
+				<div id="aucView">
+					<h1
+						style="font-family: 'Sofia Sans', sans-serif; margin: 0.5em auto; width: 80%; text-align: center; position: relative;">
+						My Live Auctions</h1>
+					<span class="material-symbols-outlined"
+						style="color: black; opacity: 1; background: none; box-shadow: none; padding: 0; font-size: 2.5em; margin: 0; float: left; margin-left: 0.7em; margin-top: -1.5em; cursor: pointer;"
+						onclick="goProf()">keyboard_double_arrow_left</span>
+					<div id="aucNFTs">
+
+					</div>
+				</div>
+			</div>
+			<div id="myListings">
+				<div id="mylisView">
+					<div id="mylisViewIn">
+						<h5>Details</h5>
+						<svg xmlns='http:/\/www.w3.org\/2000\/svg' width='2.5em' height='2.5em' fill='currentColor'
+							class='bi bi-x' viewBox='0 0 16 16'
+							style='position: absolute; margin-top: -4.9em; margin-left: 80.8em; color: black;'
+							onclick='mylisViewClose()'>
+							<path
+								d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z' />
+						</svg>
+						<div id="MylisTempX">
+							<div
+								style="width: 100%; height: auto; margin-top: 0.5em; position: relative; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+								<center><img src="" style="max-width: 95%; object-fit: contain;"></center>
+								<h4
+									style="text-align: center; font-size: 30px; font-family: var(--nftNameFont); font-weight: bolder">
+								</h4>
+							</div>
+						</div>
+						<div id="MylisTempY">
+
+						</div>
+					</div>
+				</div>
+				<div id="lisView">
+					<h1
+						style="font-family: 'Sofia Sans', sans-serif; margin: 0.5em auto; width: 80%; text-align: center; position: relative;">
+						My Live Listings</h1>
+					<span class="material-symbols-outlined"
+						style="color: black; opacity: 1; background: none; box-shadow: none; padding: 0; font-size: 2.5em; margin: 0; float: left; margin-left: 0.7em; margin-top: -1.5em; cursor: pointer;"
+						onclick="goProf()">keyboard_double_arrow_left</span>
+					<div id="lisNFTs">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- <button onclick="check()">Check</button> -->
+
+	</div>
+
+</body>
+<script src="https://g-prajwal-kumar.github.io/Real-Estate-Application_Ethereum/home.js"></script>
+
+</html>

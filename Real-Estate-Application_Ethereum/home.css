@@ -1,0 +1,1017 @@
+:root {
+	--color1: black;
+	--color2: white;
+	--buttonRed: rgb(234, 82, 82);
+	--buttonGreen: rgb(102, 205, 170);
+	--buttonText: 'Teko', sans-serif;
+	--headingFont: 'Grand Hotel', cursive;
+	--basicFont: 'Palanquin', sans-serif;
+	--nftNameFont: 'Crimson Pro', serif;
+}
+
+html, body {
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	background-color: whitesmoke;
+}
+
+#app {
+	height: 100%;
+	width: 100%;
+	overflow: scroll;
+}
+
+#loading {
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	display: none;
+}
+
+#loading h2 {
+	text-align: center;
+	margin-top: 23%;
+	color: white;
+	font-size: 30px;
+}
+
+#mainDiv {
+	margin: 0 auto;
+	height: 100%;
+	width: 100%;
+	max-width: 1920px;
+	background-color: white;
+}
+
+#mainDiv::-webkit-scrollbar {
+	display: none;
+}
+
+#mainBar {
+	width: 100%;
+	height: 4.5em;
+	border-bottom: 3px dashed black;
+}
+
+.btns {
+	font-size: 22px;
+	text-shadow: 0px 0px 20px black;
+	color: white;
+	font-family: var(--buttonText);
+	letter-spacing: 0.05em;
+	padding: 5px 12px;
+	float: right;
+	border-radius: 5px;
+	margin-right: 0.8em;
+	margin-top: 0.75em;
+	cursor: pointer;
+	transition: all 0.25s;
+	border: none;
+	background-color: var(--color1);
+}
+
+.btns:hover {
+	box-shadow: 0px 0px 12px 2px black;
+	text-shadow: 0px 0px 15px white;
+}
+
+#web3 {
+	font-size: 22px;
+	text-shadow: 0px 0px 20px black;
+	color: white;
+	font-family: var(--buttonText);
+	letter-spacing: 0.05em;
+	padding: 5px 12px;
+	float: right;
+	border-radius: 5px;
+	margin-right: 0.8em;
+	margin-top: 0.75em;
+	cursor: pointer;
+	transition: all 0.25s;
+	border: none;
+}
+
+#web3:hover {
+	text-shadow: 0px 0px 15px black;
+}
+
+#userAddress {
+	margin: 0;
+	margin-top: 0.7em;
+	margin-right: 0.8em;
+	float: right;
+	cursor: pointer;
+	font-family: 'Teko', sans-serif;
+	letter-spacing: 0.05em;
+	font-size: 28px;
+}
+
+#nfts {
+	margin: 0 auto;
+	margin-top: -1em;
+	width: 84.2%;
+	height: 25em;
+	margin-bottom: 1em;
+	display: flex;
+	transition: 0.25s;
+}
+
+#mainDescription {
+	margin-top: -0.5em;
+	margin-left: 5%;
+	width: 90%;
+	height: auto;
+	float: left;
+}
+
+#mainDescription p {
+	font-family: var(--basicFont);
+	font-size: 24px;
+	font-weight: lighter;
+}
+
+#mainDescription h1 {
+	/*font-family: var(--headingFont);
+		font-weight: lighter;
+		*/
+	color: black;
+	text-decoration: underline;
+	font-weight: lighter;
+}
+
+#view {
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	display: none;
+}
+
+#viewSale {
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	display: none;
+}
+
+#viewAuction {
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	display: none;
+}
+
+#viewLoad {
+	height: 100%;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	display: none;
+}
+
+#viewLoad h2 {
+	text-align: center;
+	margin-top: 23%;
+	color: white;
+	font-size: 30px;
+}
+
+#mainDescription {
+	display: block;
+}
+
+#allAuctions {
+	display: none;
+	width: 100%;
+	height: 46em;
+	overflow: auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#allAuctions .nft {
+	backdrop-filter: unset;
+	margin-top: 1.2em;
+	margin-bottom: 0.5em;
+}
+
+#allAuctions::-webkit-scrollbar {
+	display: none;
+}
+
+#allListings {
+	display: none;
+	width: 100%;
+	height: 46em;
+	overflow: auto;
+	overflow: auto;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+#allListings .nft {
+	backdrop-filter: unset;
+	margin-top: 1.2em;
+	margin-bottom: 0.5em;
+}
+
+#allListings::-webkit-scrollbar {
+	display: none;
+}
+
+#filter {
+	width: 100%;
+	height: auto;
+	background-color: white;
+	display: none;
+}
+
+#approveContract {
+	font-size: 22px;
+	text-shadow: 0px 0px 20px black;
+	color: white;
+	font-family: var(--buttonText);
+	letter-spacing: 0.05em;
+	padding: 5px 12px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.25s;
+	border: none;
+	display: none;
+}
+
+#nftBtn1 {
+	font-size: 20px;
+	text-shadow: 0px 0px 20px black;
+	color: black;
+	font-weight: bolder;
+	font-family: var(--buttonText);
+	letter-spacing: 0.05em;
+	padding: 5px 12px;
+	float: left;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.25s;
+	border: none;
+	width: 48%;
+}
+
+#nftBtn2 {
+	font-size: 20px;
+	text-shadow: 0px 0px 20px black;
+	color: black;
+	font-weight: bolder;
+	font-family: var(--buttonText);
+	letter-spacing: 0.05em;
+	padding: 5px 12px;
+	float: right;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.25s;
+	border: none;
+	width: 48%;
+}
+
+#nftBtn3 {
+	font-size: 20px;
+	text-shadow: 0px 0px 20px black;
+	color: black;
+	font-weight: bolder;
+	font-family: var(--buttonText);
+	letter-spacing: 0.05em;
+	padding: 5px 12px;
+	margin-left: 3.15em;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.25s;
+	border: none;
+	width: 48%;
+}
+
+#profile {
+	width: 100%;
+	height: 51em;
+	display: flex;
+	margin: 0 auto;
+	background-color: lightblue;
+	display: none;
+	overflow: hidden;
+}
+
+#profile button {
+	font-size: 23px;
+	text-shadow: 2px 2px 10px white;
+	color: white;
+	font-weight: bolder;
+	font-family: var(--buttonText);
+	letter-spacing: 0.05em;
+	padding: 5px 12px;
+	margin-top: 0.5em;
+	margin-bottom: 0px;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: all 0.25s ease;
+	border: none;
+	font-weight: lighter;
+	background-color: var(--color1);
+}
+
+#profile button:hover {
+	box-shadow: 0px 0px 10px 5px black;
+}
+
+#heading {
+	margin-bottom: 0;
+}
+
+.material-symbols-outlined {
+	background: var(--color1);
+	min-width: 1em;
+	height: 1em;
+	padding: 0.4em 0.1em;
+	border-radius: 0.3em;
+	box-shadow: 0px 0px 5px 5px var(--color1);
+	color: white;
+	margin-top: 6.5em;
+	margin-left: 5em;
+	float: left;
+	transition: 0.25s;
+	opacity: 0;
+	margin-top: -10em;
+}
+
+
+
+#nftFull:hover #temp2 {
+	opacity: 1;
+}
+
+#nftFull:hover #temp1 {
+	opacity: 1;
+}
+
+.dummy {
+	min-width: 3em;
+	height: 100%;
+}
+
+#firstNFT {
+	margin-left: 0em;
+}
+
+.nftDivs {
+	display: flex;
+	transition: 0.4s ease;
+}
+
+.nftDivs .nft {
+	max-height: 22em;
+}
+
+.nft {
+	user-select: none;
+	min-width: 17em;
+	max-width: 17em;
+	margin-left: 1em;
+	margin-right: 1em;
+	margin-top: 1.5em;
+	min-height: 22em;
+	background: linear-gradient(0deg, #282c34 0%, rgba(17, 0, 32, 0.5) 100%);
+	box-shadow: 0 0px 10px 5px #00000088;
+	border-radius: 0.7rem;
+	backdrop-filter: blur(6px);
+	-webkit-backdrop-filter: blur(7px);
+	/*  overflow: hidden;*/
+	transition: 0.3s all;
+}
+
+.nft hr {
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #88888855;
+	margin-top: 0;
+}
+
+.nft h3 {
+	color: white;
+	font-family: var(--nftNameFont);
+	font-size: 25px;
+	font-weight: lighter;
+	margin: 0;
+}
+
+.nft ins {
+	text-decoration: none;
+}
+
+.nft .main {
+	display: flex;
+	flex-direction: column;
+	width: 15em;
+	padding: 1rem;
+	transition: 0.3s ease;
+}
+
+.nft .main h2 {
+	color: var(--color2);
+	margin-top: 0.5em;
+	font-size: 23px;
+	margin-bottom: 0;
+	font-family: var(--nftNameFont);
+	font-weight: lighter;
+}
+
+.nft .main .tokenImage {
+	border-radius: 0.5rem;
+	max-width: 15em;
+	height: 11em;
+	object-fit: contain;
+	margin: 0 auto;
+}
+
+.nft .main .description {
+	margin: 1rem 0;
+	color: #a89ec9;
+	margin-bottom: 0;
+}
+
+.nft .main .tokenInfo {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nft .main .tokenInfo .price {
+	display: flex;
+	align-items: center;
+	color: #ee83e5;
+	font-weight: 700;
+}
+
+.nft .main .tokenInfo .price ins {
+	margin-left: -0.3rem;
+	margin-right: 0.5rem;
+}
+
+.nft .main .tokenInfo .duration {
+	display: flex;
+	align-items: center;
+	color: #a89ec9;
+	margin-right: 0.2rem;
+}
+
+.nft .main .tokenInfo .duration ins {
+	margin: 0.5rem;
+	margin-bottom: 0.4rem;
+}
+
+.nft .main .creator {
+	display: flex;
+	align-items: center;
+	margin-top: 0.2rem;
+	margin-bottom: -0.3rem;
+}
+
+.nft .main .creator ins {
+	color: #a89ec9;
+	text-decoration: none;
+}
+
+.nft .main .creator .wrapper {
+	display: flex;
+	align-items: center;
+	border: 1px solid #ffffff22;
+	padding: 0.3rem;
+	margin: 0;
+	margin-right: 0.5rem;
+	border-radius: 100%;
+	box-shadow: inset 0 0 0 4px #000000aa;
+}
+
+.nft .main .creator .wrapper img {
+	border-radius: 100%;
+	border: 1px solid #ffffff22;
+	width: 2rem;
+	height: 2rem;
+	object-fit: cover;
+	margin: 0;
+}
+
+.nft ::before {
+	position: fixed;
+	content: "";
+	/*  box-shadow: 0 0 100px 40px #ffffff08;*/
+	top: -10%;
+	left: -100%;
+	transform: rotate(-45deg);
+	height: 60rem;
+	transition: 0.7s all;
+}
+
+.nft:hover {
+	box-shadow: 0 0px 15px 10px #000000aa;
+	/*  filter: brightness(1.3);*/
+}
+
+.nft:hover ::before {
+	/*  filter: brightness(0.5);*/
+	top: -100%;
+	left: 200%;
+}
+
+#myView {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background-color: unset;
+}
+
+#myNFTs {
+	width: 100%;
+	height: 89%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: auto;
+}
+
+#myNFTs .nft {
+	backdrop-filter: unset;
+	min-width: 20em;
+}
+
+#myNFTs .nft .main {
+	width: 18em;
+}
+
+#myNFTs::-webkit-scrollbar {
+	display: none;
+}
+
+#myAuctions {
+	min-width: 100%;
+	height: 51em;
+	transition: 0.5s ease;
+}
+
+#aucView {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background-color: unset;
+}
+
+#aucNFTs {
+	width: 100%;
+	height: 89%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: auto;
+}
+
+#aucNFTs .nft {
+	backdrop-filter: unset;
+	min-width: 20em;
+}
+
+#aucNFTs .nft .main {
+	width: 18em;
+}
+
+#aucNFTs::-webkit-scrollbar {
+	display: none;
+}
+
+#myListings {
+	min-width: 100%;
+	height: 51em;
+	transition: 0.5s ease;
+}
+
+#lisView {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	background-color: unset;
+}
+
+#lisNFTs {
+	width: 100%;
+	height: 89%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	overflow: auto;
+}
+
+#lisNFTs .nft {
+	backdrop-filter: unset;
+	min-width: 20em;
+}
+
+#lisNFTs .nft .main {
+	width: 18em;
+}
+
+#lisNFTs::-webkit-scrollbar {
+	display: none;
+}
+
+#viewHomeDiv {
+	border-radius: 0.5em;
+	width: 90em;
+	height: 45em;
+	margin-top: 5.5em;
+	margin-left: 15em;
+	opacity: 0;
+	transition: 0.5s;
+}
+
+#viewHomeDivH2 {
+	text-align: center;
+	font-family: var(--headingFont);
+	color: black;
+	font-size: 35px;
+	background-color: white;
+	border-radius: 0.3em;
+	margin: 0;
+	margin-top: -2em;
+	padding: 0.2em;
+	font-weight: lighter;
+	transition: 0.5s;
+}
+
+#viewHomeDivImage {
+	width: 100%;
+	height: auto;
+	border-radius: 0.5em;
+	background-color: white;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#tempx {
+	width: 26em;
+	height: 41.1em;
+	float: left;
+	margin-left: -3em;
+	transition: 0.5s;
+}
+
+#tempy {
+	width: 54em;
+	height: 30em;
+	margin-top: 5.4em;
+	border-radius: 0.5em;
+	background-color: white;
+	float: right;
+	margin-right: -3em;
+	transition: 0.5s;
+}
+
+#tempyIn {
+	margin-top: -0.5em;
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#tempyIn h4 {
+	font-size: 22px;
+	margin: 0.7em 1em;
+}
+
+#myView {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+#myViewIn {
+	width: 70%;
+	height: 70%;
+	margin-top: 3.5%;
+	margin-left: 15%;
+}
+
+#myViewIn h5 {
+	width: 100%;
+	height: auto;
+	margin: 1em 0em;
+	margin-top: 3em;
+	text-align: center;
+	background-color: white;
+	font-size: 35px;
+	font-family: var(--headingFont);
+	border-radius: 1em;
+	/*	margin-top: -3em;*/
+	transition: 0.5s ease;
+}
+
+#MyTempX {
+	width: 35%;
+	height: 55%;
+	background-color: white;
+	border-radius: 1em;
+	margin-top: 5.3em;
+	float: left;
+	margin-left: -3em;
+	transition: 0.5s ease;
+}
+
+#MyTempY {
+	width: 57%;
+	height: 83%;
+	background-color: white;
+	border-radius: 1em;
+	float: right;
+	margin-right: -3em;
+	transition: 0.5s ease;
+}
+
+#MyTempY h4 {
+	text-align: unset;
+	font-family: serif;
+	font-size: 23px;
+	margin: 0.6em 0.7em;
+	background-color: unset;
+	margin-top: 0em;
+}
+
+#listingView {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+#listingViewIn {
+	width: 70%;
+	height: 70%;
+	margin-top: 3.5%;
+	margin-left: 15%;
+}
+
+#listingViewIn h4 {
+	width: 100%;
+	height: auto;
+	margin: 1em 0em;
+	text-align: center;
+	background-color: white;
+	font-size: 35px;
+	font-family: var(--headingFont);
+	border-radius: 1em;
+	/*	margin-top: -3em;*/
+	transition: 0.5s ease;
+}
+
+#ListingTempX {
+	width: 35%;
+	height: 55%;
+	background-color: white;
+	border-radius: 1em;
+	margin-top: 5.3em;
+	float: left;
+	margin-left: -3em;
+	transition: 0.5s ease;
+}
+
+#ListingTempY {
+	width: 57%;
+	height: 83%;
+	background-color: white;
+	border-radius: 1em;
+	float: right;
+	margin-right: -3em;
+	transition: 0.5s ease;
+}
+
+#ListingTempY h4 {
+	text-align: unset;
+	font-family: serif;
+	font-size: 23px;
+	margin: 0.6em 0.7em;
+	background-color: unset;
+	margin-top: 0em;
+}
+
+#auctionView {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+#auctionViewIn {
+	width: 70%;
+	height: 70%;
+	margin-top: 3.5%;
+	margin-left: 15%;
+}
+
+#auctionViewIn h4 {
+	width: 100%;
+	height: auto;
+	margin: 1em 0em;
+	text-align: center;
+	background-color: white;
+	font-size: 35px;
+	font-family: var(--headingFont);
+	border-radius: 1em;
+	/*	margin-top: -3em;*/
+	transition: 0.5s ease;
+}
+
+#AuctionTempX {
+	width: 35%;
+	height: 55%;
+	background-color: white;
+	border-radius: 1em;
+	margin-top: 5.3em;
+	float: left;
+	margin-left: -3em;
+	transition: 0.5s ease;
+}
+
+#AuctionTempY {
+	width: 57%;
+	height: 83%;
+	background-color: white;
+	border-radius: 1em;
+	float: right;
+	margin-right: -3em;
+	transition: 0.5s ease;
+}
+
+#AuctionTempY h4 {
+	text-align: unset;
+	font-family: serif;
+	font-size: 23px;
+	margin: 0.6em 0.7em;
+	background-color: unset;
+	margin-top: 0em;
+}
+
+#myProps {
+	min-width: 100%;
+	height: 51em;
+	background-color: unset;
+	margin-left: -100%;
+	transition: 0.5s ease;
+}
+
+#myProps .nft {
+	max-height: 18em;
+}
+
+
+#myaucView {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+#myaucViewIn {
+	width: 70%;
+	height: 70%;
+	margin-top: 3.5%;
+	margin-left: 15%;
+}
+
+#myaucViewIn h5 {
+	width: 100%;
+	height: auto;
+	margin: 1em 0em;
+	margin-top: 3em;
+	text-align: center;
+	background-color: white;
+	font-size: 35px;
+	font-family: var(--headingFont);
+	border-radius: 1em;
+	/*	margin-top: -3em;*/
+	transition: 0.5s ease;
+}
+
+#MyaucTempX {
+	width: 35%;
+	height: 55%;
+	background-color: white;
+	border-radius: 1em;
+	margin-top: 5.3em;
+	float: left;
+	margin-left: -3em;
+	transition: 0.5s ease;
+}
+
+#MyaucTempY {
+	width: 57%;
+	height: 83%;
+	background-color: white;
+	border-radius: 1em;
+	float: right;
+	margin-right: -3em;
+	transition: 0.5s ease;
+}
+
+#MyaucTempY h4 {
+	text-align: unset;
+	font-family: serif;
+	font-size: 23px;
+	margin: 0.6em 0.7em;
+	background-color: unset;
+	margin-top: 0em;
+}
+
+#mylisView {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.8);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+	transition: all 0.5s ease;
+}
+
+#mylisViewIn {
+	width: 70%;
+	height: 70%;
+	margin-top: 3.5%;
+	margin-left: 15%;
+}
+
+#mylisViewIn h5 {
+	width: 100%;
+	height: auto;
+	margin: 1em 0em;
+	margin-top: 3em;
+	text-align: center;
+	background-color: white;
+	font-size: 35px;
+	font-family: var(--headingFont);
+	border-radius: 1em;
+	/*	margin-top: -3em;*/
+	transition: 0.5s ease;
+}
+
+#MylisTempX {
+	width: 35%;
+	height: 55%;
+	background-color: white;
+	border-radius: 1em;
+	margin-top: 5.3em;
+	float: left;
+	margin-left: -3em;
+	transition: 0.5s ease;
+}
+
+#MylisTempX img {
+	max-height: 15em;
+}
+
+#MylisTempY {
+	width: 57%;
+	height: 83%;
+	background-color: white;
+	border-radius: 1em;
+	float: right;
+	margin-right: -3em;
+	transition: 0.5s ease;
+}
+
+#MylisTempY h4 {
+	text-align: unset;
+	font-family: serif;
+	font-size: 23px;
+	margin: 0.6em 0.7em;
+	background-color: unset;
+	margin-top: 0em;
+}
